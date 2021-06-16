@@ -17,6 +17,11 @@ function animatedForm(){
             }else{
                 parent.style.animation = "shake 0.5s ease";
             }
+
+            //get rid of animation
+            parent.addEventListener('animationend', () => {
+                parent.style.animation = "";
+            })
         });
     });
 }
