@@ -14,6 +14,8 @@ function animatedForm(){
                 nextSlide(parent, nextForm);
             } else if(input.type === 'password' && validateUser(input)){
                 nextSlide(parent, nextForm);
+            }else{
+                parent.style.animation = "shake 0.5s ease";
             }
         });
     });
