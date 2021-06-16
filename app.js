@@ -10,6 +10,10 @@ function animatedForm(){
             //check for validation
             if(input.type === "text" && validateUser(input)){
                 nextSlide(parent,nextForm)
+            }else if(input.type === 'email' && validateEmail(input)){
+                nextSlide(parent, nextForm);
+            } else if(input.type === 'password' && validateUser(input)){
+                nextSlide(parent, nextForm);
             }
         });
     });
@@ -22,6 +26,16 @@ function validateUser(user){
     }else{
         error("rgb(87, 189, 130)");
         return true; 
+    }
+}
+
+function validateEmail(email){
+    const validation = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(validation.test(email.value)){
+        error("rgb(87, 189, 130)");
+        return true;
+    }else {
+        error('rgb(189,87,87');
     }
 }
 
